@@ -1,0 +1,17 @@
+version: "3.7"
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: local
+    ports:
+      - "8080:8080"
+    volumes:
+      - .:/app/local-dev
+
+
+volumes:
+  db-data:
+      driver: local
